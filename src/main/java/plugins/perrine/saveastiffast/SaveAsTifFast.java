@@ -3,24 +3,19 @@ package plugins.perrine.saveastiffast;
 import plugins.adufour.ezplug.EzVarFile;
 import plugins.adufour.ezplug.EzVarSequence;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.URL;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.jar.Attributes;
-import java.util.jar.Manifest;
+
 
 import javax.swing.SwingUtilities;
 
-import org.apache.maven.model.Model;
-import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 
+import icy.common.Version;
 import icy.file.Loader;
 import icy.gui.frame.progress.AnnounceFrame;
 import icy.gui.viewer.Viewer;
@@ -137,26 +132,10 @@ public class SaveAsTifFast extends EzPlug implements Block {
 	}
 	
 	private String getVersionString(){
-		String version="unknown";
-		MavenXpp3Reader reader = new MavenXpp3Reader();
-		Model model;
-	   
-	      try {
-			model = reader.read(new FileReader("pom.xml"));
-			 version=model.getArtifactId()+model.getVersion();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (XmlPullParserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	     
-	    
-		return version;
+		Version version= PluginLoader.getPlugin( SaveAsTifFast.class.getName()).getVersion();
+		return "version "+ version.toString();
 	
 	}
 }

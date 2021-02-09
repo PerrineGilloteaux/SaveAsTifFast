@@ -13,7 +13,7 @@
 
     <!-- Project Information -->
     <artifactId>saveastiffast</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1.0</version>
     
     <packaging>jar</packaging>
 
@@ -51,6 +51,16 @@
                 <role>support</role>
             </roles>
         </developer>
+         <developer>
+            <id>Stephane-D</id>
+            <name>Stephane Dallongeville</name>
+         
+            <roles>
+                
+                <role>developer</role>
+                
+            </roles>
+        </developer>
     </developers>
 
     <!-- Project properties -->
@@ -77,11 +87,7 @@
             <artifactId>ezplug</artifactId>
         </dependency>
 		
-		<dependency>
-  		<groupId>org.apache.maven</groupId>
-  		<artifactId>maven-model</artifactId>
-  		<version>3.3.9</version>
-		</dependency>
+		
 		
 		
 		
