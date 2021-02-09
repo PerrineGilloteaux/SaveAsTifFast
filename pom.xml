@@ -13,7 +13,7 @@
 
     <!-- Project Information -->
     <artifactId>saveastiffast</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     
     <packaging>jar</packaging>
 
@@ -82,7 +82,9 @@
   		<artifactId>maven-model</artifactId>
   		<version>3.3.9</version>
 		</dependency>
-
+		
+		
+		
     </dependencies>
 	
     <!-- Icy Maven repository (to find parent POM) -->

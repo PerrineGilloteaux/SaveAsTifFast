@@ -40,14 +40,14 @@ import ij.ImagePlus;
 
 public class SaveAsTifFast extends EzPlug implements Block {
 	private EzVar<Sequence> inputseq=new EzVarSequence("Sequence");
-	private EzVarFile outputfile=new EzVarFile("Output file", inputseq.getValue().getFilename());
+	private EzVarFile outputfile=new EzVarFile("Output file", null);
 	
 	@Override
 	protected void initialize() {
 		addEzComponent(new EzLabel(getVersionString()));
 	    inputseq.setToolTipText("Sequence to Save");
 	    outputfile.setToolTipText("Where to save as tif");
-		
+		outputfile=new EzVarFile("Output file", inputseq.getValue().getFilename());
 		addEzComponent(inputseq);
 		addEzComponent(outputfile);
 	}
@@ -66,7 +66,7 @@ public class SaveAsTifFast extends EzPlug implements Block {
     }
     
 	@Override
-	protected void execute() {
+	protected void execute(){
 		// Obtain a TIFF writer
 		
 		ImagePlus tmpimp= ImageJUtil.convertToImageJImage(inputseq.getValue(), null);
@@ -76,8 +76,17 @@ public class SaveAsTifFast extends EzPlug implements Block {
 		}
 		IJ.saveAsTiff(tmpimp,mynamepath);
 		
+		try {
+			SwingUtilities.invokeAndWait( () -> {
+				inputseq.getValue().saveXMLData();
+				
+			} );
+		} catch (InvocationTargetException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		
-		inputseq.getValue().saveXMLData();
 		
 		String inputxml=(inputseq.getValue().getOutputFilename(false)+".xml");
 		String outputxml=mynamepath.replaceAll(".tif", ".xml");
@@ -94,7 +103,7 @@ public class SaveAsTifFast extends EzPlug implements Block {
     	Path inputxmlPath = Paths.get(inputxml);
     	Path outputxmlPath=Paths.get(outputxml);;
     	
-        Files.copy(inputxmlPath, outputxmlPath); 
+        Files.copy(inputxmlPath, outputxmlPath,java.nio.file.StandardCopyOption.REPLACE_EXISTING); 
         
     } catch (IOException e) { 
         e.printStackTrace(); 

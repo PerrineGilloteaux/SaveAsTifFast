@@ -4,6 +4,7 @@
 <section name="general">
 <section name="toolTips">
 <key name="virtualMode" value="false"/>
+<key name="mainMenuTip" value="false"/>
 </section>
 <section name="confirms"/>
 <section name="roiOverlay"/>
@@ -70,13 +71,15 @@
 <section name="loader">
 <section name="entry0">
 <key name="nbFile" value="1"/>
-<key name="file0" value="C:/Users/perri/OneDrive/Documents/test.tif"/>
+<key name="file0" value="C:/Users/perri/OneDrive/Documents/saveastest.tif"/>
 </section>
 <section name="entry1">
-<key name="nbFile" value="0"/>
+<key name="nbFile" value="1"/>
+<key name="file0" value="C:/Users/perri/OneDrive/Documents/saveastifftest.tif"/>
 </section>
 <section name="entry2">
-<key name="nbFile" value="0"/>
+<key name="nbFile" value="1"/>
+<key name="file0" value="C:/Users/perri/OneDrive/Documents/test.tif"/>
 </section>
 <section name="entry3">
 <key name="nbFile" value="0"/>
@@ -175,7 +178,7 @@
 <key name="HeightC" value="608"/>
 <key name="WidthE" value="400"/>
 <key name="HeightE" value="300"/>
-<key name="WidthI" value="400"/>
+<key name="WidthI" value="847"/>
 <key name="HeightI" value="300"/>
 <key name="Panelized" value="true"/>
 <key name="Externalized" value="false"/>
