@@ -42,7 +42,9 @@ public class SaveAsTifFast extends EzPlug implements Block {
 		addEzComponent(new EzLabel(getVersionString()));
 	    inputseq.setToolTipText("Sequence to Save");
 	    outputfile.setToolTipText("Where to save as tif");
-		outputfile=new EzVarFile("Output file", inputseq.getValue().getFilename());
+	    if (getActiveSequence() != null)
+	    	outputfile=new EzVarFile("Output file", inputseq.getValue().getFilename());
+	    
 		addEzComponent(inputseq);
 		addEzComponent(outputfile);
 	}

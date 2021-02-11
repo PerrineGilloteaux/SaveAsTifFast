@@ -49,7 +49,7 @@
 </section>
 <section name="export"/>
 </section>
-<key name="lastUpdateCheckTime" value="1612883502897"/>
+<key name="lastUpdateCheckTime" value="1612988905390"/>
 <key name="loaderFolder" value="C:\Users\perri\OneDrive\Documents"/>
 </section>
 <section name="canvas">
@@ -118,14 +118,14 @@
 <key name="heigth" value="400"/>
 </section>
 </section>
-<key name="lastUploadDate" value="1612884211243"/>
+<key name="lastUploadDate" value="1612988896630"/>
 </section>
 <section name="plugins">
 <section name="plugins.adufour.protocols.Protocols"/>
 </section>
 <section name="frame">
 <section name="main">
-<key name="XE" value="61"/>
+<key name="XE" value="80"/>
 <key name="YE" value="54"/>
 <key name="WidthE" value="1607"/>
 <key name="HeightE" value="860"/>
